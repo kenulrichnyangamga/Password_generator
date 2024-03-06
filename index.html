@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <!-- Inclure le fichier JavaScript -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+   <form>
+    <input type="text" id="myPassword">
+    <button onclick="generatePassword(event)">Générer un mot de passe</button>
+   </form>
+   <script>
+
+    const s = "QWERTZUIOPÜASDFGHJKLÖÄYXCVBNMqwertzuiopüasdfghjklöäyxcvbnm1234567890ß!&/?"
+    const long = 10
+   function generatePassword(event){
+    event.preventDefault();
+    let input = document.querySelector("#myPassword");
+    let motdepasse='';
+    for(let i = 0; i <long; i++){
+      const indexS = Math.floor(Math.random()*s.length)
+      motdepasse+=s[indexS];
+    }
+    input.value = motdepasse
+   }
+   </script>
+</body>
+</html>
